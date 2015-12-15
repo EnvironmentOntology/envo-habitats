@@ -11,5 +11,5 @@ eolenv.pro: eol_env_annotations_noParentTerms.tsv
 taxenv_slim.pro:
 	blip-findall  -i redlist.pro -r eolmap -r ncbitaxon -i eolenv.pro -consult makehab.pro taxenv/3 -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
-hab.obo:
+redlist-habitat.obo:
 	blip-findall -debug e  -i taxenv_slim.pro  -r envo -r taxonomy -consult makehab.pro whab > $@
